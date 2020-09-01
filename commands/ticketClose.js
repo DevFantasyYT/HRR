@@ -12,7 +12,8 @@ module.exports.run = async (client, message, args) => {
         var embedCreateTicket = new discord.MessageEmbed()
         .setTitle("Ticket, " + message.channel.name)
         .setDescription("Het ticket is gemarkeerd als **compleet**")
-        .setFooter("Ticket gesloten");
+        .setFooter("Ticket gesloten")
+        .setColor("#be2ee6");
 
     var ticketChannel = message.member.guild.channels.cache.find(channel => channel.name === "⛔logs");
     if (!ticketChannel) return;
