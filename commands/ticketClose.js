@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("jij kan geen ticket sluiten");
 
     if(message.channel.parentID == categoryID){
-        nessage.channel.delete()
+        message.channel.delete()
 
         var embedCreateTicket = new discord.MessageEmbed()
         .setTitle("Ticket, " + message.channel.name)
