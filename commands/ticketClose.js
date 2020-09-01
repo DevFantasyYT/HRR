@@ -8,9 +8,8 @@ module.exports.run = async (client, message, args) => {
 
     if(message.channel.parentID == categoryID){
         nessage.channel.delete()
-    }
 
-    var embedCreateTicket = new discord.MessageEmbed()
+        var embedCreateTicket = new discord.MessageEmbed()
         .setTitle("Ticket, " + message.channel.name)
         .setDescription("Het ticket is gemarkeerd als **compleet**")
         .setFooter("Ticket gesloten");
@@ -19,6 +18,13 @@ module.exports.run = async (client, message, args) => {
     if (!ticketChannel) return;
 
     ticketChannel.send(embedCreateTicket);
+
+    }else {
+
+        message.reply("Gelieve dit commando in een ticket kanaal uit te voeren!")
+
+    }
+
 
 }
 
