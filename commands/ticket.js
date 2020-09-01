@@ -43,7 +43,7 @@ module.exports.run = async (client, message, args) => {
                     settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === "@support"), {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
-                        SEND_MESSAGE: true,
+                        SEND_MESSAGES: true,
                         ATTACH_FILES: true,
                         CONNECT: true,
                         ADD_REACTIONS: true  
@@ -52,10 +52,10 @@ module.exports.run = async (client, message, args) => {
                     settedParent.updateOverwrite(message.author.id, {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
-                        SEND_MESSAGE: true,
+                        SEND_MESSAGES: true,
                         ATTACH_FILES: true,
                         CONNECT: true,
-                        ADD_REACTIONS: true  
+                        ADD_REACTIONS: true
                     });
 
                     var embedParent = new discord.MessageEmbed()
