@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
     }
                                                     
     
-    let embed = new discord.messageEmbed()
+    let embed = new discord.MessageEmbed()
     .setAuthor("Suggestie:: " + message.author.tag, message.author.avatarURL())
     .setThumbnail(message.author.avatarURL())
     .setColor("#be2ee6")
