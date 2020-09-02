@@ -1,34 +1,37 @@
 const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
-
-    if (!message.member.hasPermission("MANAGE_SERVER")) return message.channel.send("Sorry u kan dit niet doen!");
     
-    var idee = arguments.join(' ');
+    if(!args.length) {
+      return message.channel.send("Geef een suggestie mee!")
+    }
+    
+    let channel = message.guild.channels.cache.find((x) => (x.name === "♨suggesties" || x.name === "♨suggesties"))
+    
+    
+    if(!channel) {
+      return message.channel.send("Er is geen kanaal met de naam: ♨suggesties")
+    }
+                                                    
+    
+    let embed = new MessageEmbed()
+    .setAuthor("Suggestie:: " + message.author.tag, message.author.avatarURL())
+    .setThumbnail(message.author.avatarURL())
+    .setColor("#be2ee6")
+    .setDescription(args.join(" "))
+    .setTimestamp()
+    
+    
+    channel.send(embed).then(m => {
+      m.react("✅")
+      m.react("❌")
+    })
+    
 
-    if (!idee) return message.channel.send("**Geef een mededeling mee!**");
-
-    var meldingEmbed = new discord.RichEmbed()
-        .setTitle("**Nieuw mededeling!**")
-        .setColor("#a6732b")
-        .addField("Melding:", idee)
-        .addField('Ingezonden door:', message.author);
-
-        var ticketChannel = message.member.guild.channels.cache.find(channel => channel.name === "⛔logs");
-        if (!ticketChannel) return;
-      
-        ticketChannel.send(meldingEmbed).then(embedMessage => {
-            embedMessage.react('👍');
-            embedMessage.react('👎');
-
-
-        });
-        ticketChannel.send(embedCreateTicket);
-
-
-
-    message.channel.send("Mededeling opgegeven!");
-
+    
+    message.channel.send("Je suggestie is doorgegeven " + channel)
+    
+  
 }
 
 module.exports.help = {
