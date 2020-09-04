@@ -2,13 +2,13 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    if(!args[0]) message.reply("Gebruik !sps <steen, papier of schaar>");
+    if(!args[0]) message.reply("Gebruik !rps <steen, papier of schaar>");
 
     var options = ["steen", "papier", "schaar"];
 
     var result = options[Math.floor(Math.random() * options.length)];
 
-    if(args[0] === "steen"){
+    if(args[0].toUpperCase() === "steen"){
 
         if(result == "papier"){
             return message.channel.send(`Ik heb ${result} :notepad_spiral:, Ik win!`);
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
 
     }
 
-    else if(args[0] === "papier"){
+    else if(args[0].toUpperCase() === "papier"){
 
         if(result == "papier"){
             return message.channel.send(`Ik heb ${result} :notepad_spiral:, Het is gelijkspel!`);
@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
 
     }
 
-    else if(args[0] === "schaar"){
+    else if(args[0].toUpperCase() === "schaar"){
 
         if(result == "papier"){
             return message.channel.send(`Ik heb ${result} :notepad_spiral:, Jij wint!`);
@@ -50,7 +50,7 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "sps",
+    name: "rps",
     description: "Speel steen papier schaar tegen de bot.",
     category: "Fun"
 }
