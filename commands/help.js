@@ -22,6 +22,7 @@ module.exports.run = async (client, message, args) => {
 
     var response = "**Bot commands.**\n\n";
     var general = "__**Algemeen**__\n";
+    var fun =  "__**Fun commands**__";
     var admin = "\n__**Admin commands**__\n";
 
     for (let i = 0; i < commandList.length; i++) {
@@ -30,6 +31,10 @@ module.exports.run = async (client, message, args) => {
         if (command["category"] == "Algemeen") {
 
             general += `${prefix}${command["name"]} - ${command["description"]}\n`;
+
+        }else if (command["category"] == "Fun") {
+
+            admin += `${prefix}${command["name"]} - ${command["description"]}\n`;
 
         }else if (command["category"] == "Admin") {
 
@@ -40,6 +45,7 @@ module.exports.run = async (client, message, args) => {
     }
 
     response += general;
+    response += fun;
     response += admin;
 
     message.author.send(response).then(() => {

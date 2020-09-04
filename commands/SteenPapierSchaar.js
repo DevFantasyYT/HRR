@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
 
     var result = options[Math.floor(Math.random() * options.length)];
 
-    if(args[0].toUpperCase() == "STEEN"){
+    if(args[0] === "steen"){
 
         if(result == "papier"){
             return message.channel.send(`Ik heb ${result} :notepad_spiral:, Ik win!`);
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
 
     }
 
-    else if(args[0].toUpperCase() == "PAPIER"){
+    else if(args[0] === "papier"){
 
         if(result == "papier"){
             return message.channel.send(`Ik heb ${result} :notepad_spiral:, Het is gelijkspel!`);
@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
 
     }
 
-    else if(args[0].toUpperCase() == "SCHAAR"){
+    else if(args[0] === "schaar"){
 
         if(result == "papier"){
             return message.channel.send(`Ik heb ${result} :notepad_spiral:, Jij wint!`);
@@ -51,6 +51,6 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "sps",
-    description: "De bot begroet je terug.",
-    category: "Algemeen"
+    description: "Speel steen papier schaar tegen de bot.",
+    category: "Fun"
 }
