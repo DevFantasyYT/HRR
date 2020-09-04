@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
     var admin = "\n__**Admin commands**__\n";
 
     for (let i = 0; i < commandList.length; i++) {
-        const command = array[index];
+        const command = commandList[i];
         
         if (command["category"] == "Algemeen") {
 
