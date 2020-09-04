@@ -9,7 +9,8 @@ module.exports.run = async (client, message, args) => {
         {name: "Aantal mensen op de server:", value:`${message.guild.memberCount}`},
         {name: "Aantal rollen:", value:`${message.guild.roles.cache.size}`},
     )
-    .setColor("#be2ee6");
+    .setColor("#be2ee6")
+    .setTimestamp();
 
 return message.channel.send(serverInfo);
 

@@ -8,7 +8,8 @@ module.exports.run = async (client, message, args) => {
         {name: "Bot naam:", value:`${client.user.username}`},
         {name: "Author", value: "Fantasy#1903"}
     )
-    .setColor("#be2ee6");
+    .setColor("#be2ee6")
+    .setTimestamp();
 
 return message.channel.send(botEmbed);
 
