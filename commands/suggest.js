@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
                                                     
     
     let embed = new discord.MessageEmbed()
-    .setAuthor("Suggestie:: " + message.author.tag)
+    .setAuthor("Suggestie: " + message.author.tag)
     .setThumbnail(message.author.avatarURL())
     .setColor("#be2ee6")
     .setDescription(args.join(" "))
@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
     
 
     
-    message.channel.send("Je suggestie is doorgegeven mensen kunnen er nu op stemmen!!")
+    message.channel.send("Je suggestie is doorgegeven mensen kunnen er nu op stemmen!")
     
   
 }
