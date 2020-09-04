@@ -45,7 +45,9 @@ client.on("guildMemberAdd", member => {
 client.on("ready", async () => {
 
 console.log(`${client.user.username} is online.`);
-client.user.setActivity("Testen", {type: "Playing"});
+client.user.setActivity("HRR Roleplay", {
+    type: "WATCHING"
+  });
 
 });
 
