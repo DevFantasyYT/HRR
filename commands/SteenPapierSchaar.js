@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
 
     var result = options[Math.floor(Math.random() * options.length)];
 
-    if(args[0].toUpperCase() === "steen"){
+    if(args[0].toUpperCase() === "STEEN"){
 
         if(result == "papier"){
             return message.channel.send(`Ik heb ${result} :notepad_spiral:, Ik win!`);
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
 
     }
 
-    else if(args[0].toUpperCase() === "papier"){
+    else if(args[0].toUpperCase() === "PAPIER"){
 
         if(result == "papier"){
             return message.channel.send(`Ik heb ${result} :notepad_spiral:, Het is gelijkspel!`);
@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
 
     }
 
-    else if(args[0].toUpperCase() === "schaar"){
+    else if(args[0].toUpperCase() === "SCHAAR"){
 
         if(result == "papier"){
             return message.channel.send(`Ik heb ${result} :notepad_spiral:, Jij wint!`);
