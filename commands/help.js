@@ -1,25 +1,57 @@
 const discord = require("discord.js");
+const botConfig = require("../botconfig.json");
 
 module.exports.run = async (client, message, args) => {
 
-    try{
+    var commandList = [];
+    var prefix = botConfig.prefix;
 
-        var text = "**Help lijst** \n\n **__Commands__** \n !hallo - De bot begroet je terug \n !info - Geeft info over de bot. \n !serverinfo - Geeft informatie over de server. \n !ticket - Maak een ticket aan. \n !suggest - Geef een suggestie op voor de server.";
+    client.commands.forEach(command => {
+        
+        var constuctor = {
 
-        var textAdmin = "\n **__Admin__** \n !kick - Kick een speler (!kick {gebruiker} {reden}) \n !ban - Ban een speler (!ban {gebruiker} {reden}) \n !clear - Verwijder een aantal berichten.";
+            name: command.help.name,
+            description: command.help.description,
+            category: command.help.category
 
-        message.author.send(text)
+        }
 
-        message.author.send(textAdmin)
+        commandList.push(constuctor);
 
-        message.reply("Alle commands staan in je DM📫")
+    });
 
-    }catch(error){
-        mwessage.reply('Er is iets fout gelopen!');
+    var response = "**Bot commands.**\n\n";
+    var general = "__**Algemeen**__\n";
+    var admin = "\n__**Admin commands**__\n";
+
+    for (let i = 0; i < commandList.length; i++) {
+        const command = array[index];
+        
+        if (command["category"] == "Algemeen") {
+
+            general += `${prefix}${command["name"]} - ${command["description"]}\n`;
+
+        }else if (command["category"] == "Admin") {
+
+            admin += `${prefix}${command["name"]} - ${command["description"]}\n`;
+
+        }
+
     }
+
+    response += general;
+    response += admin;
+
+    message.author.send(response).then(() => {
+        message.reply("Alle commands staan in je DM 📬");
+    }).catch(() => {
+        message.reply("Je prive berichten staan uit, kan niks verzenden.");
+    })
 
 }
 
 module.exports.help = {
-    name: "help"
+    name: "help",
+    description: "Geeft al de verschhillende commands",
+    category: "Algemeen"
 }

@@ -15,5 +15,7 @@ return message.channel.send(botEmbed);
 }
 
 module.exports.help = {
-    name: "info"
+    name: "botinfo",
+    description: "Geeft de bot info.",
+    category: "Algemeen"
 }
