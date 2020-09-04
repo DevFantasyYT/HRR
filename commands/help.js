@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args) => {
 
     var response = "**Bot commands.**\n\n";
     var general = "__**Algemeen**__\n";
-    var fun =  "__**Fun commands**__";
+    var fun =  "\n__**Fun commands**__\n";
     var admin = "\n__**Admin commands**__\n";
 
     for (let i = 0; i < commandList.length; i++) {
@@ -34,7 +34,7 @@ module.exports.run = async (client, message, args) => {
 
         }else if (command["category"] == "Fun") {
 
-            admin += `${prefix}${command["name"]} - ${command["description"]}\n`;
+            fun += `${prefix}${command["name"]} - ${command["description"]}\n`;
 
         }else if (command["category"] == "Admin") {
 
