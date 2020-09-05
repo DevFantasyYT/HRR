@@ -24,6 +24,7 @@ module.exports.run = async (client, message, args) => {
     var general = "__**Algemeen**__\n";
     var fun =  "\n__**Fun commands**__\n";
     var admin = "\n__**Admin commands**__\n";
+    var roblox = "\n__**Roleplay commands**__";
 
     for (let i = 0; i < commandList.length; i++) {
         const command = commandList[i];
@@ -40,6 +41,10 @@ module.exports.run = async (client, message, args) => {
 
             admin += `${prefix}${command["name"]} - ${command["description"]}\n`;
 
+        }else if (command["category"] == "Roblox") {
+
+            roblox += `${prefix}${command["name"]} - ${command["description"]}\n`;
+
         }
 
     }
@@ -47,6 +52,7 @@ module.exports.run = async (client, message, args) => {
     response += general;
     response += fun;
     response += admin;
+    response += roblox;
 
     message.author.send(response).then(() => {
         message.reply("Alle commands staan in je DM 📬");
