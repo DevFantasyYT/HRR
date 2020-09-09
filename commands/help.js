@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
     var general = "__**Algemeen**__\n";
     var fun =  "\n__**Fun commands**__\n";
     var admin = "\n__**Admin commands**__\n";
-    var roblox = "\n__**Roleplay commands**__";
+    var roblox = "\n__**Roleplay commands**__\n";
 
     for (let i = 0; i < commandList.length; i++) {
         const command = commandList[i];
