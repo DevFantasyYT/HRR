@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "kick",
-    description: "Kick een speler (!kick {gebruiker} {reden}).",
-    category: "Admin"
+    name: "whois",
+    description: "Krijg een gebruiks info.",
+    category: "Algemeen"
 }
