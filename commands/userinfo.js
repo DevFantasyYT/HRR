@@ -1,5 +1,5 @@
 const discord = require("discord.js");
-const moment = require("moment")
+const moment = require("moment");
 
 module.exports.run = async (client, message, args) => {
 
