@@ -21,13 +21,13 @@ module.exports.run = async (bot, message, args) => {
     const userEmbed = new Discord.MessageEmbed()
     .setAuthor(member.user.tag, member.user.displayAvatarURL())
     .setTimestamp()
-    .setColor('BLUE')
-    .setImage(member.user.displayAvatarURL())
-    .addField("Member ID", member.id)
-    .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
-    .addField("Account Created On:", ` ${moment.utc(member.user.createdAt).format("dddd, MMMM Do YYYY")}`, true) 
-    .addField('Joined the server At', `${joineddate} \n> ${joined} day(S) Ago`)
-    .addField("Status", status)
+    .setColor('#be2ee6')
+    .addField("Gebruikersnaam:", member)
+    .addField("Gerbuiks ID:", member.id)
+    .addField("Status:", status)
+    .addField("Account gemaakt op:", ` ${moment.utc(member.user.createdAt).format("dddd, MMMM Do YYYY")}`, true) 
+    .addField('De server gejoint op:', `${joineddate} \n> ${joined} day(S) Ago`)
+    .addField('Rolen:', `<@&${member._roles.join('> <@&')}>`)
 
     message.channel.send(userEmbed);
 }
