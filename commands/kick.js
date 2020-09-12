@@ -30,9 +30,11 @@ module.exports.run = async (client, message, args) => {
     .addField('Reden', reason)
     .setColor("#be2ee6")
     .setTimestamp()
+    
+    var logChannel = message.member.guild.channels.cache.find(channel => channel.name === "⛔logs");
+    if (!logChannel) return;
 
-    message.channel.send(kickEmbed);
-
+    logChannel.send(kickEmbed);
 }
 
 module.exports.help = {

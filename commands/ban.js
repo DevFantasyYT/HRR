@@ -31,7 +31,10 @@ module.exports.run = async (client, message, args) => {
     .setColor("#be2ee6")
     .setTimestamp()
 
-    message.channel.send(banEmbed);
+    var logChannel = message.member.guild.channels.cache.find(channel => channel.name === "⛔logs");
+    if (!logChannel) return;
+
+    logChannel.send(kickEmbed);
 
 }
 
