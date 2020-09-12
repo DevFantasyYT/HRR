@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
 
     if(!reason) return message.reply('Geef een reden op!');
 
-    member.ban(reason)
+    member.ban({reason: reason})
     .catch(err => {
         if(err) return message.channel.send('Contacteer de developer van de bot, iets is er mis gegaan!')
     })
